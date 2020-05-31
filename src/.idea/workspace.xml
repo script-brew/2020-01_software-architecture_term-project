@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d8d1d54-ad35-4190-b556-ef61c175db0a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../UML/RSS_PackageDiagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/../UML/RSS_PackageDiagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UML/ReligionSearchSystem.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../UML/ReligionSearchSystem.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/ReligionSearchSystem.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/ReligionSearchSystem.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/src/main/java/com/rss/ReligionSystem/ReligionSystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReligionSystem/src/test/java/com/rss/ReligionSystem/ReligionSystemApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\2020-1\Software Architecture\Home Work\term project\2020-01_software-architecture_term-project\src\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cfNvD18PJDC0rDIeZKmD17Feyb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d8d1d54-ad35-4190-b556-ef61c175db0a" name="Default Changelist" comment="" />
+      <created>1590915915501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590915915501</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="180" y="42" key="new project wizard" timestamp="1590915970986">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="180" y="42" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1590915970986" />
+  </component>
+</project>
