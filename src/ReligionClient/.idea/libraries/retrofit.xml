@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="retrofit">
+    <CLASSES>
+      <root url="jar://C:/import_library/jar_files/converter-gson-2.3.0.jar!/" />
+      <root url="jar://C:/import_library/jar_files/gson-2.7.jar!/" />
+      <root url="jar://C:/import_library/jar_files/okhttp-3.8.0.jar!/" />
+      <root url="jar://C:/import_library/jar_files/okio-1.13.0.jar!/" />
+      <root url="jar://C:/import_library/retrofit-2.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
