@@ -1,12 +1,13 @@
-package com.rss.respond;
+package com.rss.ReligionServer.response;
 
-import com.google.gson.annotations.SerializedName;
+public class ResponseForm {
+    private int id;
+    private int code;
 
-public class SignResponse {
-    @SerializedName("id")
-    int id;
-    @SerializedName("code")
-    int code;
+    public ResponseForm(int id, int code) {
+        this.id = id;
+        this.code = code;
+    }
 
     public int getId() {
         return id;
@@ -15,7 +16,7 @@ public class SignResponse {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public int getCode() {
         return code;
     }

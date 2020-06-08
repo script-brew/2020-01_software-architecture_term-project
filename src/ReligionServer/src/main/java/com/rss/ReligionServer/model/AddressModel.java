@@ -1,24 +1,15 @@
-package com.rss.reqeust;
+package com.rss.ReligionServer.model;
 
 public class AddressModel {
-    @SerializedName("id")
     private int id;
-    @SerializedName("city")
     private String city;
-    @SerializedName("gu")
     private String gu;
-    @SerializedName("dong")
     private String dong;
-    @SerializedName("postalCode")
     private String postalCode;
-    @SerializedName("apartment")
     private String apartment;
 
-    public AddressModel() {
-        id = 0;
-    }
-    public AddressModel(String city, String gu, String dong, String postalCode, String apartment) {
-        this();
+    public AddressModel(int id, String city, String gu, String dong, String postalCode, String apartment) {
+        this.id = id;
         this.city = city;
         this.gu = gu;
         this.dong = dong;
