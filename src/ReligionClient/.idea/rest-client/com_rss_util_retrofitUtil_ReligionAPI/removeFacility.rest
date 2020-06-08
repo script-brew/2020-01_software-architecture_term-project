@@ -1,0 +1,7 @@
+DELETE
+{BASE_URL}/removeFacility
+&facilityId={facilityId}
+
+# Headers
+@Content-Type: 
+

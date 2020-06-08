@@ -1,0 +1,16 @@
+POST
+{BASE_URL}/registerFacility
+
+# Headers
+@Content-Type: application/json
+
+# Body
+{
+  "id": "{id}",
+  "name": "{name}",
+  "number": "{number}",
+  "description": "{description}",
+  "url": "{url}",
+  "regUserId": "{regUserId}",
+  "address": "{address}"
+}

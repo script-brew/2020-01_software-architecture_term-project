@@ -1,6 +1,5 @@
 package com.rss.controller;
 
-import com.rss.App;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,7 +23,7 @@ public class MainController extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/MainController.fxml"));
         primaryStage.setTitle("Sample FX");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

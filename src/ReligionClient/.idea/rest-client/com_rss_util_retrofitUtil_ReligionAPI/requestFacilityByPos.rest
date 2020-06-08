@@ -1,0 +1,14 @@
+GET
+{BASE_URL}/getFacilityByPos
+
+
+
+# Body
+{
+  "id": "{id}",
+  "city": "{city}",
+  "gu": "{gu}",
+  "dong": "{dong}",
+  "postalCode": "{postalCode}",
+  "apartment": "{apartment}"
+}

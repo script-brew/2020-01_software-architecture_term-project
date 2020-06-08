@@ -1,0 +1,10 @@
+GET
+{BASE_URL}/signIn
+
+
+
+# Body
+{
+  "email": "{email}",
+  "password": "{password}"
+}

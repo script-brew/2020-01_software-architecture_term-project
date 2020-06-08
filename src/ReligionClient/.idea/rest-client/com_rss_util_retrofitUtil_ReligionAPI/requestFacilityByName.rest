@@ -1,0 +1,6 @@
+GET
+{BASE_URL}/getFacilityByName
+&name={name}
+
+
+

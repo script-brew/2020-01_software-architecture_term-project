@@ -1,0 +1,16 @@
+POST
+{BASE_URL}/signUp
+
+# Headers
+@Content-Type: application/json
+
+# Body
+{
+  "id": "{id}",
+  "email": "{email}",
+  "password": "{password}",
+  "name": "{name}",
+  "number": "{number}",
+  "birthDay": "{birthDay}",
+  "kind": "{kind}"
+}
