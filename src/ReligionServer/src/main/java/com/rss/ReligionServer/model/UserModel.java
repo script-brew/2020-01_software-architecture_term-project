@@ -6,7 +6,7 @@ public class UserModel {
     private String password;
     private String name;
     private int number;
-    private int birthDay;
+    private int birthday;
     private String kind;
 
     public UserModel(int id, String email, String password, String name, int number, int birthDay, String kind) {
@@ -15,7 +15,7 @@ public class UserModel {
         this.password = password;
         this.name = name;
         this.number = number;
-        this.birthDay = birthDay;
+        this.birthday = birthDay;
         this.kind = kind;
     }
 
@@ -59,12 +59,12 @@ public class UserModel {
         this.number = number;
     }
 
-    public int getBirthDay() {
-        return birthDay;
+    public int getBirthday() {
+        return birthday;
     }
 
-    public void setBirthDay(int birthDay) {
-        this.birthDay = birthDay;
+    public void setBirthday(int birthday) {
+        this.birthday = birthday;
     }
 
     public String getKind() {

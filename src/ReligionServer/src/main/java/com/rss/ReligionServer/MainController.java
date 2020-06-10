@@ -12,12 +12,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class MainController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
-    @Autowired
-    JdbcTemplate jdbcTemplate;
 
     @GetMapping("/greeting")
     public String greeting() {
-        jdbcTemplate.update("INSERT INTO tb_sample(co_text) VALUES(?)", "Hello world!");
         return "Hello world";
     }
 }
