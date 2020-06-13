@@ -6,17 +6,19 @@ public class FacilityModel {
     private int number;
     private String description;
     private String url;
+    private String kind;
     private int regUserId;
-    private AddressModel address;
+    private int addressId;
 
-    public FacilityModel(int id, String name, int number, String description, String url, int regUserId, AddressModel address) {
+    public FacilityModel(int id, String name, int number, String description, String url, String kind, int regUserId, int addressId) {
         this.id = id;
         this.name = name;
         this.number = number;
         this.description = description;
         this.url = url;
+        this.kind = kind;
         this.regUserId = regUserId;
-        this.address = address;
+        this.addressId = addressId;
     }
 
     public int getId() {
@@ -59,6 +61,14 @@ public class FacilityModel {
         this.url = url;
     }
 
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
     public int getRegUserId() {
         return regUserId;
     }
@@ -67,11 +77,11 @@ public class FacilityModel {
         this.regUserId = regUserId;
     }
 
-    public AddressModel getAddress() {
-        return address;
+    public int getAddressId() {
+        return addressId;
     }
 
-    public void setAddress(AddressModel address) {
-        this.address = address;
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 }

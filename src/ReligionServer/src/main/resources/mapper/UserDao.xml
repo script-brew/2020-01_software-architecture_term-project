@@ -4,7 +4,7 @@
 
 <mapper namespace="com.rss.ReligionServer.dao.UserDao">
     <insert id="create" parameterType="com.rss.ReligionServer.model.UserModel" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO `religiondb`.`tb_user` (`co_email`, `co_password`, `co_name`, `co_number`, `co_birthday`, `co_kind`)
+        INSERT INTO `religion`.`tb_user` (`co_email`, `co_password`, `co_name`, `co_number`, `co_birthday`, `co_kind`)
         VALUES (#{email}, #{password}, #{name}, #{number}, #{birthday}, #{kind});
     </insert>
 
