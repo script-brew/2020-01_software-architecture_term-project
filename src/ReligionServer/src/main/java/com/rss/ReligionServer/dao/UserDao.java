@@ -1,16 +1,17 @@
 package com.rss.ReligionServer.dao;
 
 import com.rss.ReligionServer.model.UserModel;
+import com.rss.ReligionServer.model.mapping.UserMapping;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
 public interface UserDao {
-    long create(UserModel user);
-    List<UserModel> retrieveAll();
-    List<UserModel> retrieveByEmail(String email);
-    UserModel retrieveById(int id);
-    long update(UserModel userModel);
+    long create(UserMapping user);
+    List<UserMapping> retrieveAll();
+    List<UserMapping> retrieveByEmail(String email);
+    UserMapping retrieveById(int id);
+    long update(UserMapping user);
     long remove(int id);
 }

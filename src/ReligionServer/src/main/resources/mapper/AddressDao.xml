@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rss.ReligionServer.dao.AddressDao">
+    <insert id="create" parameterType="com.rss.ReligionServer.model.mapping.AddressMapping" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `religion`.`tb_address` (`co_city`, `co_gu`, `co_dong`, `co_postalCode`, `co_apartment`)
+            VALUES (#{city}, #{gu}, #{dong}, #{postalCode}, #{apartment});
+    </insert>
+
+    <select id="retrieveById" parameterType="int" resultType="com.rss.ReligionServer.model.mapping.AddressMapping">
+        select * from tb_address where co_id = #{addressId};
+    </select>
+
+    <update id="update" parameterType="com.rss.ReligionServer.model.mapping.AddressMapping">
+        UPDATE tb_address SET
+            co_city = #{city},
+            co_gu = #{gu},
+            co_dong = #{dong},
+            co_postalCode = #{postalCode},
+            co_apartment = #{apartment}
+        WHERE co_id = #{id};
+    </update>
+
+    <delete id="remove" parameterType="int">
+        DELETE FROM tb_address where co_id = #{id};
+    </delete>
+</mapper>

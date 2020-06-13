@@ -1,6 +1,8 @@
-package com.rss.ReligionServer.model;
+package com.rss.ReligionServer.model.mapping;
 
-public class FacilityModel {
+import com.rss.ReligionServer.model.AddressModel;
+
+public class FacilityMapping {
     private int id;
     private String name;
     private int number;
@@ -8,9 +10,9 @@ public class FacilityModel {
     private String url;
     private String kind;
     private int regUserId;
-    private AddressModel address;
+    private int addressId;
 
-    public FacilityModel(int id, String name, int number, String description, String url, String kind, int regUserId, AddressModel address) {
+    public FacilityMapping(int id, String name, int number, String description, String url, String kind, int regUserId, int addressId) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -18,7 +20,7 @@ public class FacilityModel {
         this.url = url;
         this.kind = kind;
         this.regUserId = regUserId;
-        this.address = address;
+        this.addressId = addressId;
     }
 
     public int getId() {
@@ -77,11 +79,11 @@ public class FacilityModel {
         this.regUserId = regUserId;
     }
 
-    public AddressModel getAddress() {
-        return address;
+    public int getAddressId() {
+        return addressId;
     }
 
-    public void setAddress(AddressModel address) {
-        this.address = address;
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 }
