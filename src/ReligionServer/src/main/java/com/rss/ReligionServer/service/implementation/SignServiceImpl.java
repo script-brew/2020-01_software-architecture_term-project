@@ -5,6 +5,8 @@ import com.rss.ReligionServer.model.SignInfo;
 import com.rss.ReligionServer.model.UserModel;
 import com.rss.ReligionServer.model.mapping.UserMapping;
 import com.rss.ReligionServer.service.SignService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +17,16 @@ import java.util.List;
 public class SignServiceImpl implements SignService {
     @Autowired
     UserDao userDao;
+    private Logger log = LoggerFactory.getLogger(SignServiceImpl.class);
 
     @Override
     public int signIn(SignInfo signInfo) {
         List<UserMapping> userModels = userDao.retrieveByEmail(signInfo.getEmail());
+
         if(userModels == null) return 1;
 
         for(UserMapping userModel : userModels) {
+            log.info(String.format("email: %s, password: %s\n", userModel.getEmail(), userModel.getPassword()));
             if(userModel.getPassword().equals(signInfo.getPassword())) return 0;
         }
         return 1;

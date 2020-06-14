@@ -1,5 +1,7 @@
 package com.rss.reqeust;
 
+import com.google.gson.annotations.SerializedName;
+
 public class AddressModel {
     @SerializedName("id")
     private int id;

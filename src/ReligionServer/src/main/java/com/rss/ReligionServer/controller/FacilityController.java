@@ -4,6 +4,8 @@ import com.rss.ReligionServer.model.AddressModel;
 import com.rss.ReligionServer.model.FacilityModel;
 import com.rss.ReligionServer.response.ResponseForm;
 import com.rss.ReligionServer.service.FacilityService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +16,15 @@ public class FacilityController {
     @Autowired
     FacilityService facilityService;
 
+    Logger log = LoggerFactory.getLogger(FacilityController.class);
+
     @RequestMapping(value = "/registerFacility", method = RequestMethod.POST)
     public ResponseForm registerFacility(@RequestBody FacilityModel facilityModel) {
         int result;
         try {
             result = facilityService.registerFacility(facilityModel);
         } catch (Exception e) {
+            log.error("error in controller(register)", e);
             return new ResponseForm(1, -1, e.toString());
         }
         return new ResponseForm(0, result, "");
@@ -34,7 +39,7 @@ public class FacilityController {
 
             return facilityModels;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("error in controller(findAll)", e);
         }
         return null;
     }
@@ -48,28 +53,62 @@ public class FacilityController {
             if(facilityModels == null) throw new Exception();
             return facilityModels;
         }catch (Exception e) {
-            e.printStackTrace();
+            log.error("error in controller(findByPos)", e);
         }
         return null;
     }
 
-    @RequestMapping(value = "/getFacilityByCate", method = RequestMethod.GET)
-    public List<FacilityModel> findFacilityByCate(@RequestParam String category) {
+    @RequestMapping(value = "/getFacilityByKind", method = RequestMethod.GET)
+    public List<FacilityModel> findFacilityByKind(@RequestParam String kind) {
+        List<FacilityModel> facilityModels;
+
+        try {
+            facilityModels = facilityService.findFacilityByKind(kind);
+            if(facilityModels == null) throw new Exception("null list");
+
+            return facilityModels;
+        } catch (Exception e) {
+            log.error("error in controller(findByKind", e);
+        }
         return null;
     }
 
     @RequestMapping(value = "/getFacilityByName", method = RequestMethod.GET)
     public List<FacilityModel> findFacilityByName(@RequestParam String name) {
+        List<FacilityModel> facilityModels;
+
+        try {
+            facilityModels = facilityService.findFacilityByName(name);
+            if(facilityModels == null) throw new Exception("null list");
+
+            return facilityModels;
+        } catch (Exception e) {
+            log.error("error in controller(findByName", e);
+        }
         return null;
     }
 
     @RequestMapping(value = "/updateFacility", method = RequestMethod.PUT)
     public ResponseForm modifyFacility(@RequestBody FacilityModel facilityModel) {
-        return null;
+        int code;
+        try {
+            code = facilityService.modifyFacility(facilityModel);
+        } catch (Exception e){
+            log.error("error in controller(modify)", e);
+            return new ResponseForm(1, -1, e.toString());
+        }
+        return new ResponseForm(code, facilityModel.getId(), "");
     }
 
-    @RequestMapping(value = "/removeFacility", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteFacility", method = RequestMethod.DELETE)
     public ResponseForm deleteFacility(@RequestParam int facilityId) {
-        return null;
+        int code;
+        try {
+            code = facilityService.deleteFacility(facilityId);
+        } catch (Exception e) {
+            log.error("error in controller(delete)", e);
+            return new ResponseForm(1, -1, e.toString());
+        }
+        return new ResponseForm(code, facilityId, "");
     }
 }

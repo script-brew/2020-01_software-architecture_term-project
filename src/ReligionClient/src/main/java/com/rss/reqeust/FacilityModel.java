@@ -13,17 +13,20 @@ public class FacilityModel {
     private String description;
     @SerializedName("url")
     private String url;
+    @SerializedName("kind")
+    private String kind;
     @SerializedName("regUserId")
     private int regUserId;
     @SerializedName("address")
     private AddressModel address;
 
-    public FacilityModel(int id, String name, int number, String description, String url, int regUserId, AddressModel address) {
+    public FacilityModel(int id, String name, int number, String description, String url, String kind, int regUserId, AddressModel address) {
         this.id = id;
         this.name = name;
         this.number = number;
         this.description = description;
         this.url = url;
+        this.kind = kind;
         this.regUserId = regUserId;
         this.address = address;
     }
@@ -66,6 +69,14 @@ public class FacilityModel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 
     public int getRegUserId() {
