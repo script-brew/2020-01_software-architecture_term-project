@@ -5,12 +5,16 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class MainController extends Application {
 
@@ -68,8 +72,9 @@ public class MainController extends Application {
         try {
             Parent signUpWindow = FXMLLoader.load(getClass().getResource("/SignUpController.fxml"));
             Scene signUpScene = new Scene(signUpWindow);
-            Stage currentStage = (Stage) signUp.getScene().getWindow();
+            Stage currentStage = new Stage();
             currentStage.setScene(signUpScene);
+            currentStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,6 +82,9 @@ public class MainController extends Application {
 
     public void exit(ActionEvent actionEvent) {
         Stage currentStage = (Stage) exit.getScene().getWindow();
-        currentStage.close();
+        currentStage.setOnCloseRequest(e -> {
+            e.consume();
+            currentStage.close();
+        });
     }
 }
