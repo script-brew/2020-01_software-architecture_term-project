@@ -1,0 +1,7 @@
+@font-face {
+    src: url('../font/maple_light.ttf'),
+}
+
+.label {
+    -fx-font-family: "메이플스토리";
+}

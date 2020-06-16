@@ -1,23 +1,29 @@
 package com.rss.entity;
 
 import com.google.gson.annotations.SerializedName;
+import com.rss.reqeust.SignUpRequest;
 
 public class User {
     private int id;
     private String email;
     private String password;
     private String name;
-    private int number;
-    private int birthDay;
+    private String number;
+    private String birthDay;
     private UserKind kind;
 
-    public User(String email, String password, String name, int number, int birthDay, UserKind kind) {
+    public User(String email, String password, String name, String number, String birthDay, UserKind kind) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.number = number;
         this.birthDay = birthDay;
         this.kind = kind;
+    }
+
+    public SignUpRequest toSignUpRequest() {
+        SignUpRequest signUpRequest = new SignUpRequest(id, email, password, name, number, birthDay, kind.toString());
+        return signUpRequest;
     }
 
     public int getId() {
@@ -52,19 +58,19 @@ public class User {
         this.name = name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public int getBirthDay() {
+    public String getBirthDay() {
         return birthDay;
     }
 
-    public void setBirthDay(int birthDay) {
+    public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
     }
 

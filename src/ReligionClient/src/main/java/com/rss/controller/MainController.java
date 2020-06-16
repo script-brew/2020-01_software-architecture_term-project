@@ -5,16 +5,13 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class MainController extends Application {
 
@@ -51,7 +48,9 @@ public class MainController extends Application {
             primaryStage.close();
         });
 
-        Parent root = FXMLLoader.load(getClass().getResource("/MainController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/controller/MainController.fxml"));
+        Font.loadFont(getClass().getResourceAsStream("/font/maple_light.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("/font/maple_bold.ttf"), 10);
         primaryStage.setTitle("종교 통합 검색 시스템");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
@@ -59,7 +58,7 @@ public class MainController extends Application {
 
     public void signIn(ActionEvent actionEvent) {
         try {
-            Parent signInWindow = FXMLLoader.load(getClass().getResource("/SignInController.fxml"));
+            Parent signInWindow = FXMLLoader.load(getClass().getResource("/controller/SignInController.fxml"));
             Scene signInScene = new Scene(signInWindow);
             Stage currentStage = (Stage) signIn.getScene().getWindow();
             currentStage.setScene(signInScene);
@@ -70,7 +69,7 @@ public class MainController extends Application {
 
     public void signUp(ActionEvent actionEvent) {
         try {
-            Parent signUpWindow = FXMLLoader.load(getClass().getResource("/SignUpController.fxml"));
+            Parent signUpWindow = FXMLLoader.load(getClass().getResource("/controller/SignUpController.fxml"));
             Scene signUpScene = new Scene(signUpWindow);
             Stage currentStage = new Stage();
             currentStage.setScene(signUpScene);
@@ -82,9 +81,6 @@ public class MainController extends Application {
 
     public void exit(ActionEvent actionEvent) {
         Stage currentStage = (Stage) exit.getScene().getWindow();
-        currentStage.setOnCloseRequest(e -> {
-            e.consume();
-            currentStage.close();
-        });
+        currentStage.close();
     }
 }

@@ -7,6 +7,8 @@ public class SignResponse {
     int id;
     @SerializedName("code")
     int code;
+    @SerializedName("error")
+    String error;
 
     public int getId() {
         return id;
@@ -22,5 +24,13 @@ public class SignResponse {
 
     public void setCode(int code) {
         this.code = code;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }

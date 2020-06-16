@@ -18,18 +18,25 @@ public class SignController {
 
     @RequestMapping(value = "/isEmailExist", method = RequestMethod.GET)
     public ResponseForm isEmailExist(@RequestParam String email) {
-        return null;
+        try {
+            List<UserModel> userModels = signService.findUserByEmail(email);
+            if (userModels.isEmpty()) return new ResponseForm(0, 0, "");
+            else return new ResponseForm(1, userModels.get(0).getId(), "");
+        } catch (Exception e) {
+            return new ResponseForm(1, 0, e.toString());
+        }
+
     }
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public ResponseForm signUp(@RequestBody UserModel userModel) {
         int userId = 0;
         try {
-            signService.create(userModel);
+            userId = signService.create(userModel);
         } catch (Exception e) {
-            return new ResponseForm(1, userModel.getId(),  e.toString());
+            return new ResponseForm(1, userId,  e.toString());
         }
-        return new ResponseForm(0, userModel.getId(), "");
+        return new ResponseForm(0, userId, "");
     }
 
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)

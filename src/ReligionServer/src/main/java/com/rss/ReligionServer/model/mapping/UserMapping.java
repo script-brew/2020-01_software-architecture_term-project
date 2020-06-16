@@ -5,11 +5,11 @@ public class UserMapping {
     private String email;
     private String password;
     private String name;
-    private int number;
-    private int birthday;
+    private String number;
+    private String birthday;
     private String kind;
 
-    public UserMapping(int id, String email, String password, String name, int number, int birthday, String kind) {
+    public UserMapping(int id, String email, String password, String name, String number, String birthday, String kind) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -51,19 +51,19 @@ public class UserMapping {
         this.name = name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public int getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(int birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
