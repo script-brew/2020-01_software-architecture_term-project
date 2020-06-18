@@ -1,4 +1,7 @@
-package com.rss.ReligionServer.model;
+package com.rss.reqeust;
+
+import com.rss.entity.User;
+import com.rss.entity.UserKind;
 
 public class UserModel {
     private int id;
@@ -6,7 +9,7 @@ public class UserModel {
     private String password;
     private String name;
     private String number;
-    private String birthday;
+    private String birthDay;
     private String kind;
 
     public UserModel(int id, String email, String password, String name, String number, String birthDay, String kind) {
@@ -15,8 +18,15 @@ public class UserModel {
         this.password = password;
         this.name = name;
         this.number = number;
-        this.birthday = birthDay;
+        this.birthDay = birthDay;
         this.kind = kind;
+    }
+
+    public User toUser() {
+        User user = new User(email, password, name, number, birthDay, UserKind.valueOf(kind));
+        user.setId(id);
+
+        return user;
     }
 
     public int getId() {
@@ -59,12 +69,12 @@ public class UserModel {
         this.number = number;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getBirthDay() {
+        return birthDay;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
     }
 
     public String getKind() {
@@ -83,7 +93,7 @@ public class UserModel {
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 ", number='" + number + '\'' +
-                ", birthday='" + birthday + '\'' +
+                ", birthDay='" + birthDay + '\'' +
                 ", kind='" + kind + '\'' +
                 '}';
     }

@@ -3,6 +3,7 @@ package com.rss.util.retrofitUtil;
 import com.rss.reqeust.SignRequest;
 import com.rss.entity.User;
 import com.rss.reqeust.SignUpRequest;
+import com.rss.reqeust.UserModel;
 import com.rss.respond.SignResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -16,8 +17,8 @@ public interface SignAPI {
     Call<SignResponse> isEmailExist(@Query("email") String email);
 
     @POST("/signUp")
-    Call<SignResponse> requestSignUp(@Body SignUpRequest signUpRequest);
+    Call<SignResponse> requestSignUp(@Body UserModel userModel);
 
-    @GET("/signIn")
-    Call<SignResponse> requestSignIn(@Body SignRequest signRequest);
+    @POST("/signIn")
+    Call<UserModel> requestSignIn(@Body SignRequest signRequest);
 }

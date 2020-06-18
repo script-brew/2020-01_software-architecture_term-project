@@ -20,16 +20,22 @@ public class SignServiceImpl implements SignService {
     private Logger log = LoggerFactory.getLogger(SignServiceImpl.class);
 
     @Override
-    public int signIn(SignInfo signInfo) {
+    public UserModel signIn(SignInfo signInfo) {
         List<UserMapping> userModels = userDao.retrieveByEmail(signInfo.getEmail());
 
-        if(userModels == null) return 1;
+        if(userModels == null) return null;
 
         for(UserMapping userModel : userModels) {
             log.info(String.format("email: %s, password: %s\n", userModel.getEmail(), userModel.getPassword()));
-            if(userModel.getPassword().equals(signInfo.getPassword())) return 0;
+            if(userModel.getPassword().equals(signInfo.getPassword())) {
+                UserModel user = new UserModel(userModel.getId(), userModel.getEmail(), userModel.getPassword(), userModel.getName(),
+                        userModel.getNumber(), userModel.getBirthday(), userModel.getKind());
+
+                log.info(String.format("find user info: %s\n", user.toString()));
+                return user;
+            }
         }
-        return 1;
+        return null;
     }
 
     @Override

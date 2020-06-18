@@ -6,7 +6,7 @@ import com.rss.ReligionServer.model.UserModel;
 import java.util.List;
 
 public interface SignService {
-    int signIn(SignInfo signInfo);
+    UserModel signIn(SignInfo signInfo);
     int create(UserModel userModel);
     List<UserModel> findAll();
     List<UserModel> findUserByEmail(String email);

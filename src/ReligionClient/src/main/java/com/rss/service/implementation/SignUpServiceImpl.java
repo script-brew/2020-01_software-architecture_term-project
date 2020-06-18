@@ -2,16 +2,13 @@ package com.rss.service.implementation;
 
 import com.rss.entity.User;
 import com.rss.reqeust.SignUpRequest;
+import com.rss.reqeust.UserModel;
 import com.rss.respond.SignResponse;
-import com.rss.service.RegisterService;
 import com.rss.service.SignUpService;
 import com.rss.util.retrofitUtil.APIUtils;
-import com.rss.util.retrofitUtil.ReligionAPI;
 import com.rss.util.retrofitUtil.SignAPI;
 import retrofit2.Call;
 import retrofit2.Response;
-
-import java.io.IOException;
 
 public class SignUpServiceImpl implements SignUpService {
     private SignAPI signAPI;
@@ -47,9 +44,9 @@ public class SignUpServiceImpl implements SignUpService {
 
     @Override
     public int requestSignUp(User newUser) {
-        SignUpRequest signUpRequest = newUser.toSignUpRequest();
+        UserModel userModel = newUser.toUserModel();
 
-        Call<SignResponse> call = signAPI.requestSignUp(signUpRequest);
+        Call<SignResponse> call = signAPI.requestSignUp(userModel);
 
         try {
             Response<SignResponse> response = call.execute();

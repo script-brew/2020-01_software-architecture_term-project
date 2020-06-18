@@ -7,14 +7,20 @@ public class Facility {
     private int number;
     private String description;
     private String url;
+    private FacilityKind kind;
     private int regUserId;
 
-    public Facility(String name, Address address, int number, String description, String url, int regUserId) {
+    public Facility() {
+        id = 0;
+    }
+    public Facility(String name, Address address, int number, String description, String url, FacilityKind kind, int regUserId) {
+        this();
         this.name = name;
         this.address = address;
         this.number = number;
         this.description = description;
         this.url = url;
+        this.kind = kind;
         this.regUserId = regUserId;
     }
 
@@ -66,6 +72,14 @@ public class Facility {
         this.url = url;
     }
 
+    public FacilityKind getKind() {
+        return kind;
+    }
+
+    public void setKind(FacilityKind kind) {
+        this.kind = kind;
+    }
+
     public int getRegUserId() {
         return regUserId;
     }
@@ -83,6 +97,7 @@ public class Facility {
                 ", number=" + number +
                 ", description='" + description + '\'' +
                 ", url='" + url + '\'' +
+                ", kind=" + kind +
                 ", regUserId=" + regUserId +
                 '}';
     }

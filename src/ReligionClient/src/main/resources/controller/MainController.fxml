@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="360.0" prefWidth="720.0" stylesheets="@../css/font_style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rss.controller.MainController">
    <children>
       <ButtonBar layoutX="316.0" layoutY="339.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
         <buttons>
-          <Button fx:id="signIn" mnemonicParsing="false" onAction="#signIn" text="로그인" />
             <Button fx:id="signUp" mnemonicParsing="false" onAction="#signUp" text="회원가입" />
             <Button fx:id="exit" mnemonicParsing="false" onAction="#exit" text="종료하기" />
         </buttons>
       </ButtonBar>
+      <Label layoutX="319.0" layoutY="83.0" text="종교 통합 검색 시스템" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="75.0">
+         <font>
+            <Font name="휴먼고딕" size="36.0" />
+         </font>
+      </Label>
+      <HBox layoutX="260.0" layoutY="146.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="56.0">
+               <children>
+                  <Label text="이메일:">
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="비밀번호:">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="144.0">
+               <children>
+                  <TextField fx:id="emailField">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <PasswordField fx:id="passwordField" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+    <Button fx:id="signIn" layoutX="350.0" layoutY="234.0" mnemonicParsing="false" onAction="#signIn" text="로그인" />
    </children>
 </AnchorPane>

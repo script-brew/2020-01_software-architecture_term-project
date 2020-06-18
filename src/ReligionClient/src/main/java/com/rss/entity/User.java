@@ -1,7 +1,7 @@
 package com.rss.entity;
 
-import com.google.gson.annotations.SerializedName;
 import com.rss.reqeust.SignUpRequest;
+import com.rss.reqeust.UserModel;
 
 public class User {
     private int id;
@@ -21,9 +21,9 @@ public class User {
         this.kind = kind;
     }
 
-    public SignUpRequest toSignUpRequest() {
-        SignUpRequest signUpRequest = new SignUpRequest(id, email, password, name, number, birthDay, kind.toString());
-        return signUpRequest;
+    public UserModel toUserModel() {
+        UserModel userModel = new UserModel(id, email, password, name, number, birthDay, kind.toString());
+        return userModel;
     }
 
     public int getId() {

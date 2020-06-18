@@ -40,9 +40,9 @@ public class SignController {
     }
 
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)
-    public ResponseForm signIn(@RequestBody SignInfo signInfo) {
-        int sign = signService.signIn(signInfo);
-        return new ResponseForm(sign, 0, signInfo.getEmail());
+    public UserModel signIn(@RequestBody SignInfo signInfo) {
+        UserModel user = signService.signIn(signInfo);
+        return user;
     }
 
     @RequestMapping(value = "/findUserById", method = RequestMethod.GET)
