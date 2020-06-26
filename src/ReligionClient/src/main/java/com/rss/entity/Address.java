@@ -2,16 +2,18 @@ package com.rss.entity;
 
 public class Address {
     private int id;
-    private String city;
-    private String gu;
-    private String dong;
-    private String postalCode;
-    private String apartment;
+    private String city; //시
+    private String gu; //구
+    private String dong; //동
+    private String postalCode; //우편번호
+    private int zibun;
+    private String apartment; //건물이름
 
-    public Address(String city, String gu, String dong, String postalCode, String apartment) {
+    public Address(String city, String gu, String dong, int zibun, String postalCode, String apartment) {
         this.city = city;
         this.gu = gu;
         this.dong = dong;
+        this.zibun = zibun;
         this.postalCode = postalCode;
         this.apartment = apartment;
     }
@@ -48,6 +50,14 @@ public class Address {
         this.dong = dong;
     }
 
+    public int getZibun() {
+        return zibun;
+    }
+
+    public void setZibun(int zibun) {
+        this.zibun = zibun;
+    }
+
     public String getPostalCode() {
         return postalCode;
     }
@@ -66,12 +76,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "city='" + city + '\'' +
-                ", gu='" + gu + '\'' +
-                ", dong='" + dong + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                ", apartment='" + apartment + '\'' +
-                '}';
+        return postalCode + "\n"
+                + city + " " + gu + " " + dong + " " + zibun + " ";
     }
 }

@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
     private static Retrofit rss_retrofit = null;
     private static Retrofit signRetrofit = null;
+    private static Retrofit addressRetrofit = null;
 
     public static Retrofit getRssRetrofit(String baseUrl) {
         if(rss_retrofit == null) {
@@ -25,5 +26,15 @@ public class RetrofitClient {
                     .build();
         }
         return signRetrofit;
+    }
+
+    public static Retrofit getAddressRetrofit(String baseUrl) {
+        if(addressRetrofit == null) {
+            addressRetrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return addressRetrofit;
     }
 }

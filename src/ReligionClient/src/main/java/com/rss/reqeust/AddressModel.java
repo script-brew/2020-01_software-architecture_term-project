@@ -1,6 +1,7 @@
 package com.rss.reqeust;
 
 import com.google.gson.annotations.SerializedName;
+import com.rss.entity.Address;
 
 public class AddressModel {
     @SerializedName("id")
@@ -11,6 +12,8 @@ public class AddressModel {
     private String gu;
     @SerializedName("dong")
     private String dong;
+    @SerializedName("zibun")
+    private int zibun;
     @SerializedName("postalCode")
     private String postalCode;
     @SerializedName("apartment")
@@ -19,13 +22,20 @@ public class AddressModel {
     public AddressModel() {
         id = 0;
     }
-    public AddressModel(String city, String gu, String dong, String postalCode, String apartment) {
+    public AddressModel(String city, String gu, String dong, int zibun, String postalCode, String apartment) {
         this();
         this.city = city;
         this.gu = gu;
         this.dong = dong;
+        this.zibun = zibun;
         this.postalCode = postalCode;
         this.apartment = apartment;
+    }
+
+    public Address toAddress() {
+        Address address = new Address(city, gu, dong, zibun, postalCode, apartment);
+        address.setId(id);
+        return address;
     }
 
     public int getId() {
@@ -58,6 +68,14 @@ public class AddressModel {
 
     public void setDong(String dong) {
         this.dong = dong;
+    }
+
+    public int getZibun() {
+        return zibun;
+    }
+
+    public void setZibun(int zibun) {
+        this.zibun = zibun;
     }
 
     public String getPostalCode() {

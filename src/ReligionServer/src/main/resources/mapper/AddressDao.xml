@@ -4,8 +4,8 @@
 
 <mapper namespace="com.rss.ReligionServer.dao.AddressDao">
     <insert id="create" parameterType="com.rss.ReligionServer.model.mapping.AddressMapping" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO `religion`.`tb_address` (`co_city`, `co_gu`, `co_dong`, `co_postalCode`, `co_apartment`)
-            VALUES (#{city}, #{gu}, #{dong}, #{postalCode}, #{apartment});
+        INSERT INTO `religion`.`tb_address` (`co_city`, `co_gu`, `co_dong`, `co_postalCode`, `co_apartment`, `co_zibun`)
+            VALUES (#{city}, #{gu}, #{dong}, #{postalCode}, #{apartment}, #{zibun});
     </insert>
 
     <select id="retrieveById" parameterType="int" resultType="com.rss.ReligionServer.model.mapping.AddressMapping">
@@ -18,7 +18,8 @@
             co_gu = #{gu},
             co_dong = #{dong},
             co_postalCode = #{postalCode},
-            co_apartment = #{apartment}
+            co_apartment = #{apartment},
+            co_zibun = #{zibun}
         WHERE co_id = #{id};
     </update>
 

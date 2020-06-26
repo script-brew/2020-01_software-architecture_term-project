@@ -30,11 +30,11 @@ public class FacilityController {
         return new ResponseForm(0, result, "");
     }
 
-    @RequestMapping(value = "/getFacilityAll", method = RequestMethod.GET)
-    public List<FacilityModel> findFacilityAll() {
+    @RequestMapping(value = "/getFacilityByUserId", method = RequestMethod.GET)
+    public List<FacilityModel> findFacilityByUserId(int userId) {
         List<FacilityModel> facilityModels;
         try {
-            facilityModels = facilityService.findAll();
+            facilityModels = facilityService.findByUserId(userId);
             if(facilityModels == null) throw new Exception();
 
             return facilityModels;
@@ -80,7 +80,7 @@ public class FacilityController {
         try {
             facilityModels = facilityService.findFacilityByName(name);
             if(facilityModels == null) throw new Exception("null list");
-
+            log.info(String.format("found facility: %s", facilityModels.toString()));
             return facilityModels;
         } catch (Exception e) {
             log.error("error in controller(findByName", e);
@@ -95,7 +95,7 @@ public class FacilityController {
             code = facilityService.modifyFacility(facilityModel);
         } catch (Exception e){
             log.error("error in controller(modify)", e);
-            return new ResponseForm(1, -1, e.toString());
+            return new ResponseForm(-1, facilityModel.getId(), e.toString());
         }
         return new ResponseForm(code, facilityModel.getId(), "");
     }
@@ -107,7 +107,7 @@ public class FacilityController {
             code = facilityService.deleteFacility(facilityId);
         } catch (Exception e) {
             log.error("error in controller(delete)", e);
-            return new ResponseForm(1, -1, e.toString());
+            return new ResponseForm(-1, -1, e.toString());
         }
         return new ResponseForm(code, facilityId, "");
     }

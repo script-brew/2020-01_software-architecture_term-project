@@ -13,8 +13,8 @@ public interface ReligionAPI {
     @POST("/registerFacility")
     Call<RegisterResponse> registerFacility(@Body FacilityModel facilityModel);
 
-    @GET("/getFacilityAll")
-    Call<List<FacilityModel>> requestFacilityAll();
+    @GET("/getFacilityByUserId")
+    Call<List<FacilityModel>> requestFacilityByUserId(@Query("userId") int userId);
 
     @GET("/getFacilityByPos")
     Call<List<FacilityModel>> requestFacilityByPos(@Body AddressModel addressModel);
@@ -28,6 +28,6 @@ public interface ReligionAPI {
     @PUT("/updateFacility")
     Call<RegisterResponse> updateFacility(@Body FacilityModel facilityModel);
 
-    @DELETE("/removeFacility")
-    Call<RegisterResponse> removeFacility(@Query("facilityId") int facilityId);
+    @DELETE("/deleteFacility")
+    Call<RegisterResponse> deleteFacility(@Query("facilityId") int facilityId);
 }

@@ -4,16 +4,16 @@ public class Facility {
     private int id;
     private String name;
     private Address address;
-    private int number;
+    private String number;
     private String description;
     private String url;
-    private FacilityKind kind;
+    private String kind;
     private int regUserId;
 
     public Facility() {
         id = 0;
     }
-    public Facility(String name, Address address, int number, String description, String url, FacilityKind kind, int regUserId) {
+    public Facility(String name, Address address, String number, String description, String url, String kind, int regUserId) {
         this();
         this.name = name;
         this.address = address;
@@ -48,11 +48,11 @@ public class Facility {
         this.address = address;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -72,11 +72,11 @@ public class Facility {
         this.url = url;
     }
 
-    public FacilityKind getKind() {
+    public String getKind() {
         return kind;
     }
 
-    public void setKind(FacilityKind kind) {
+    public void setKind(String kind) {
         this.kind = kind;
     }
 

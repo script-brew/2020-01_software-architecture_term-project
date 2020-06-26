@@ -5,14 +5,14 @@ import com.rss.ReligionServer.model.AddressModel;
 public class FacilityMapping {
     private int id;
     private String name;
-    private int number;
+    private String number;
     private String description;
     private String url;
     private String kind;
     private int regUserId;
     private int addressId;
 
-    public FacilityMapping(int id, String name, int number, String description, String url, String kind, int regUserId, int addressId) {
+    public FacilityMapping(int id, String name, String number, String description, String url, String kind, int regUserId, int addressId) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -39,11 +39,11 @@ public class FacilityMapping {
         this.name = name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

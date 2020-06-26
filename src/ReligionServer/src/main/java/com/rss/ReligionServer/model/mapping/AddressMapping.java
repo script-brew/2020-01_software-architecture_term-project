@@ -7,12 +7,14 @@ public class AddressMapping {
     private String dong;
     private String postalCode;
     private String apartment;
+    private int zibun;
 
-    public AddressMapping(int id, String city, String gu, String dong, String postalCode, String apartment) {
+    public AddressMapping(int id, String city, String gu, String dong, String postalCode, String apartment, int zibun) {
         this.id = id;
         this.city = city;
         this.gu = gu;
         this.dong = dong;
+        this.zibun = zibun;
         this.postalCode = postalCode;
         this.apartment = apartment;
     }
@@ -47,6 +49,14 @@ public class AddressMapping {
 
     public void setDong(String dong) {
         this.dong = dong;
+    }
+
+    public int getZibun() {
+        return zibun;
+    }
+
+    public void setZibun(int zibun) {
+        this.zibun = zibun;
     }
 
     public String getPostalCode() {

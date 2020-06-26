@@ -159,16 +159,16 @@ public class SignUpController implements Initializable {
             int result = signUpService.requestSignUp(newUser);
 
             Alert signUpAlert = new Alert(Alert.AlertType.INFORMATION);
-            signUpAlert.setTitle("È¸¿ø°¡ÀÔ Á¤º¸");
+            signUpAlert.setTitle("ì¢…êµ ê²€ìƒ‰ ì‹œìŠ¤í…œ");
 
             if(result > 0) {
-                signUpAlert.setHeaderText("È¸¿ø°¡ÀÔ ¼º°ø");
-                signUpAlert.setContentText("È¸¿ø°¡ÀÔ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.");
+                signUpAlert.setHeaderText("íšŒì›ê°€ì… ì„±ê³µ");
+                signUpAlert.setContentText("íšŒì›ê°€ì…ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤.");
                 signUpAlert.showAndWait();
                 cancel(event);
             } else {
-                signUpAlert.setHeaderText("È¸¿ø°¡ÀÔ ½ÇÆĞ");
-                signUpAlert.setContentText("È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+                signUpAlert.setHeaderText("íšŒì›ê°€ì… ì‹¤íŒ¨");
+                signUpAlert.setContentText("íšŒì›ê°€ì…ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
                 signUpAlert.showAndWait();
             }
         } catch (Exception e) {

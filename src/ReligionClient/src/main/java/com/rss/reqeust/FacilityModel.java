@@ -1,6 +1,7 @@
 package com.rss.reqeust;
 
 import com.google.gson.annotations.SerializedName;
+import com.rss.entity.Facility;
 
 public class FacilityModel {
     @SerializedName("id")
@@ -8,7 +9,7 @@ public class FacilityModel {
     @SerializedName("name")
     private String name;
     @SerializedName("number")
-    private int number;
+    private String number;
     @SerializedName("description")
     private String description;
     @SerializedName("url")
@@ -20,7 +21,7 @@ public class FacilityModel {
     @SerializedName("address")
     private AddressModel address;
 
-    public FacilityModel(int id, String name, int number, String description, String url, String kind, int regUserId, AddressModel address) {
+    public FacilityModel(int id, String name, String number, String description, String url, String kind, int regUserId, AddressModel address) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -29,6 +30,12 @@ public class FacilityModel {
         this.kind = kind;
         this.regUserId = regUserId;
         this.address = address;
+    }
+
+    public Facility toFacility() {
+        Facility facility = new Facility(name, address.toAddress(), number, description, url, kind, regUserId);
+        facility.setId(id);
+        return facility;
     }
 
     public int getId() {
@@ -47,11 +54,11 @@ public class FacilityModel {
         this.name = name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

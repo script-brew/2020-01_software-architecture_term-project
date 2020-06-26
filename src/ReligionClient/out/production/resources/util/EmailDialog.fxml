@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="100.0" prefWidth="200.0" stylesheets="@../css/font_style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rss.util.dialog.EmailDialog">
+   <bottom>
+      <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exit" styleClass="label" text="확인" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <Label fx:id="emailInfo" styleClass="label" text="이메일이 중복되었습니다." BorderPane.alignment="CENTER">
+         <font>
+            <Font name="메이플스토리 Bold" size="12.0" />
+         </font></Label>
+   </center>
+   <top>
+   </top>
+   <top>
+      <Label text="정보" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

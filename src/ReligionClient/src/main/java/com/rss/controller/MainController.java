@@ -4,6 +4,7 @@ import com.rss.entity.User;
 import com.rss.entity.UserKind;
 import com.rss.service.SignInService;
 import com.rss.service.implementation.ServiceFactoryCreator;
+import com.rss.util.SystemStatus;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +16,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -66,7 +66,7 @@ public class MainController extends Application implements Initializable {
         });
 
         Parent root = FXMLLoader.load(getClass().getResource("/controller/MainController.fxml"));
-        primaryStage.setTitle("Á¾±³ ÅëÇÕ °Ë»ö ½Ã½ºÅÛ");
+        primaryStage.setTitle("ì¢…êµ í†µí•© ê²€ìƒ‰ ì‹œìŠ¤í…œ");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
@@ -85,12 +85,13 @@ public class MainController extends Application implements Initializable {
                 currentUser = signInService.requestSignIn(email, password);
                 if(currentUser == null) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("·Î±×ÀÎ");
-                    alert.setHeaderText("·Î±×ÀÎ ½ÇÆĞ");
-                    alert.setContentText("·Î±×ÀÎ Á¤º¸°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+                    alert.setTitle("ë¡œê·¸ì¸");
+                    alert.setHeaderText("ë¡œê·¸ì¸ ì‹¤íŒ¨");
+                    alert.setContentText("ë¡œê·¸ì¸ ì •ë³´ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
                     alert.showAndWait();
                 } else {
                     FXMLLoader loader;
+                    SystemStatus.setUser(currentUser);
                     if(currentUser.getKind() == UserKind.Register) {
                         loader = new FXMLLoader(getClass().getResource("/controller/RegisterController.fxml"));
                     } else {
@@ -100,9 +101,8 @@ public class MainController extends Application implements Initializable {
                     Parent root = loader.load();
                     Scene scene = new Scene(root);
                     Stage stage = (Stage) signIn.getScene().getWindow();
-                    stage.setTitle("Á¾±³ °Ë»ö ½Ã½ºÅÛ");
+                    stage.setTitle("ì¢…êµ ê²€ìƒ‰ ì‹œìŠ¤í…œ");
                     stage.setScene(scene);
-                    stage.setUserData(currentUser);
                     stage.show();
                 }
             }

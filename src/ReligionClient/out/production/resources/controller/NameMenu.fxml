@@ -13,12 +13,12 @@
    <children>
       <TableView fx:id="tableView" editable="true" layoutX="24.0" layoutY="23.0" prefHeight="298.0" prefWidth="452.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
          <columns>
-            <TableColumn fx:id="nameCol" prefWidth="75.0" resizable="false" text="이름" />
-            <TableColumn fx:id="descriptionCol" prefWidth="100.0" text="설명" />
-            <TableColumn fx:id="addressCol" prefWidth="150.0" resizable="false" text="주소" />
-            <TableColumn fx:id="numberCol" prefWidth="100.0" resizable="false" text="번호" />
-            <TableColumn fx:id="urlCol" prefWidth="120.0" resizable="false" text="URL" />
-            <TableColumn fx:id="kindCol" prefWidth="75.0" resizable="false" text="분류" />
+            <TableColumn fx:id="nameCol" prefWidth="75.0" text="이름" />
+            <TableColumn fx:id="descriptionCol" prefWidth="75.0" text="설명" />
+            <TableColumn fx:id="addressCol" prefWidth="75.0" text="주소" />
+            <TableColumn fx:id="numberCol" prefWidth="75.0" text="번호" />
+            <TableColumn fx:id="urlCol" prefWidth="75.0" text="URL" />
+            <TableColumn fx:id="kindCol" prefWidth="75.0" text="분류" />
          </columns>
       </TableView>
       <ButtonBar layoutX="506.0" layoutY="268.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="15.0">

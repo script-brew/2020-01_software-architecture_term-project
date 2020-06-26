@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rss.util.dialog.AddressDialog">
+   <top>
+      <HBox prefHeight="50.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="주소 검색: " textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Text>
+            <TextField fx:id="addressField" prefHeight="20.0" prefWidth="100.0">
+               <HBox.margin>
+                  <Insets right="25.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="findBtn" mnemonicParsing="false" onAction="#find" text="찾기">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ListView fx:id="addressList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="addBtn" alignment="CENTER" mnemonicParsing="false" onAction="#add" text="추가">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="50.0" right="100.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="cancelBtn" alignment="CENTER" mnemonicParsing="false" onAction="#cancel" text="취소" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

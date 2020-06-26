@@ -3,14 +3,14 @@ package com.rss.ReligionServer.model;
 public class FacilityModel {
     private int id;
     private String name;
-    private int number;
+    private String number;
     private String description;
     private String url;
     private String kind;
     private int regUserId;
     private AddressModel address;
 
-    public FacilityModel(int id, String name, int number, String description, String url, String kind, int regUserId, AddressModel address) {
+    public FacilityModel(int id, String name, String number, String description, String url, String kind, int regUserId, AddressModel address) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -37,11 +37,11 @@ public class FacilityModel {
         this.name = name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -83,5 +83,19 @@ public class FacilityModel {
 
     public void setAddress(AddressModel address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "FacilityModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", number=" + number +
+                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
+                ", kind='" + kind + '\'' +
+                ", regUserId=" + regUserId +
+                ", address=" + address +
+                '}';
     }
 }

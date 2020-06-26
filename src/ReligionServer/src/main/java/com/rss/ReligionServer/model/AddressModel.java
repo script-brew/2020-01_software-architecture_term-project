@@ -5,14 +5,16 @@ public class AddressModel {
     private String city;
     private String gu;
     private String dong;
+    private int zibun;
     private String postalCode;
     private String apartment;
 
-    public AddressModel(int id, String city, String gu, String dong, String postalCode, String apartment) {
+    public AddressModel(int id, String city, String gu, String dong, String postalCode, String apartment, int zibun) {
         this.id = id;
         this.city = city;
         this.gu = gu;
         this.dong = dong;
+        this.zibun = zibun;
         this.postalCode = postalCode;
         this.apartment = apartment;
     }
@@ -49,6 +51,14 @@ public class AddressModel {
         this.dong = dong;
     }
 
+    public int getZibun() {
+        return zibun;
+    }
+
+    public void setZibun(int zibun) {
+        this.zibun = zibun;
+    }
+
     public String getPostalCode() {
         return postalCode;
     }
@@ -63,5 +73,18 @@ public class AddressModel {
 
     public void setApartment(String apartment) {
         this.apartment = apartment;
+    }
+
+    @Override
+    public String toString() {
+        return "AddressModel{" +
+                "id=" + id +
+                ", city='" + city + '\'' +
+                ", gu='" + gu + '\'' +
+                ", dong='" + dong + '\'' +
+                ", zibun=" + zibun +
+                ", postalCode='" + postalCode + '\'' +
+                ", apartment='" + apartment + '\'' +
+                '}';
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface FacilityService {
     int registerFacility(FacilityModel facilityModel);
-    List<FacilityModel> findAll();
+    List<FacilityModel> findByUserId(int userId);
     List<FacilityModel> findFacilityByKind(String kind);
     List<FacilityModel> findFacilityByPos(AddressModel addressModel);
     List<FacilityModel> findFacilityByName(String name);
