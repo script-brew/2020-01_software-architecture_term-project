@@ -2,6 +2,7 @@ package com.rss.service.implementation;
 
 import com.rss.entity.Address;
 import com.rss.entity.Facility;
+import com.rss.reqeust.AddressModel;
 import com.rss.reqeust.FacilityModel;
 import com.rss.service.SearchService;
 import com.rss.util.retrofitUtil.APIUtils;
@@ -26,13 +27,36 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public List<Facility> findFacByPos(Address address) {
-        return null;
+    public List<Facility> findFacByPos(String address, int mode) {
+        List<Facility> facilityList = new ArrayList<>();
+        Call<List<FacilityModel>> call = religionAPI.requestFacilityByPos(address, mode);
+
+        try {
+            Response<List<FacilityModel>> response = call.execute();
+            for(FacilityModel model : response.body()) {
+                Facility facility = model.toFacility();
+                facilityList.add(facility);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return facilityList;
     }
 
     @Override
     public List<Facility> findByCate(String cate) {
-        return null;
+        List<Facility> facilityList = new ArrayList<>();
+        Call<List<FacilityModel>> call = religionAPI.requestFacilityByCate(cate);
+        try {
+            Response<List<FacilityModel>> response = call.execute();
+            for(FacilityModel model : response.body()) {
+                Facility facility = model.toFacility();
+                facilityList.add(facility);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return facilityList;
     }
 
     @Override

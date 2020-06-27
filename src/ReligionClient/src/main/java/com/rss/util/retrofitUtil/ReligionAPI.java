@@ -17,7 +17,8 @@ public interface ReligionAPI {
     Call<List<FacilityModel>> requestFacilityByUserId(@Query("userId") int userId);
 
     @GET("/getFacilityByPos")
-    Call<List<FacilityModel>> requestFacilityByPos(@Body AddressModel addressModel);
+    Call<List<FacilityModel>> requestFacilityByPos(@Query("address") String address,
+                                                   @Query("mode") int mode);
 
     @GET("/getFacilityByKind")
     Call<List<FacilityModel>> requestFacilityByCate(@Query("kind") String kind);

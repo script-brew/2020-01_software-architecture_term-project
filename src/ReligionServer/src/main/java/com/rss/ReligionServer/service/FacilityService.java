@@ -9,7 +9,7 @@ public interface FacilityService {
     int registerFacility(FacilityModel facilityModel);
     List<FacilityModel> findByUserId(int userId);
     List<FacilityModel> findFacilityByKind(String kind);
-    List<FacilityModel> findFacilityByPos(AddressModel addressModel);
+    List<FacilityModel> findFacilityByPos(String address, int mode);
     List<FacilityModel> findFacilityByName(String name);
     int modifyFacility(FacilityModel facilityModel);
     int deleteFacility(int id);

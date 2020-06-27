@@ -31,7 +31,7 @@ public class FacilityController {
     }
 
     @RequestMapping(value = "/getFacilityByUserId", method = RequestMethod.GET)
-    public List<FacilityModel> findFacilityByUserId(int userId) {
+    public List<FacilityModel> findFacilityByUserId(@RequestParam int userId) {
         List<FacilityModel> facilityModels;
         try {
             facilityModels = facilityService.findByUserId(userId);
@@ -44,12 +44,13 @@ public class FacilityController {
         return null;
     }
 
-    @RequestMapping(value = "/getFacilityByPos", method = RequestMethod.POST)
-    public List<FacilityModel> findFacilityByPos(@RequestBody AddressModel addressModel) {
+    @RequestMapping(value = "/getFacilityByPos", method = RequestMethod.GET)
+    public List<FacilityModel> findFacilityByPos(@RequestParam String address, @RequestParam int mode) {
         List<FacilityModel> facilityModels;
 
         try {
-            facilityModels = facilityService.findFacilityByPos(addressModel);
+            log.info(String.format("address : %s, mode: %d", address, mode));
+            facilityModels = facilityService.findFacilityByPos(address, mode);
             if(facilityModels == null) throw new Exception();
             return facilityModels;
         }catch (Exception e) {

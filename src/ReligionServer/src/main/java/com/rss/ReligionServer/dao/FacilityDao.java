@@ -15,8 +15,8 @@ public interface FacilityDao {
     List<FacilityMapping> retrieveAll();
     FacilityMapping retrieveById(int id);
     List<FacilityMapping> retrieveByKind(String kind);
-    List<FacilityMapping> retrieveByPos(@Param("address") AddressMapping addressMapping,
-                                      @Param("to") int to);
+    List<FacilityMapping> retrieveByPos(@Param("address") String address,
+                                      @Param("mode") int mode);
     List<FacilityMapping> retrieveByName(String name);
     List<FacilityMapping> retrieveByUserId(int userId);
     long update(FacilityMapping facilityMapping);

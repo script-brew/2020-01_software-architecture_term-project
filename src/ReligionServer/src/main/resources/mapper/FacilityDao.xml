@@ -25,9 +25,9 @@
         FROM tb_facility AS f
             JOIN tb_address AS a ON f.co_addressId = a.co_id
         WHERE   (
-                (#{to} = 0 AND a.co_city = #{address.city})
-                OR (#{to} = 1 AND a.co_city = #{address.city} AND a.co_gu = #{address.gu})
-                OR (#{to} = 2 AND a.co_city = #{address.city} AND a.co_gu = #{address.gu} AND a.co_dong = #{address.dong})
+                (#{mode} = 0 AND a.co_city LIKE CONCAT('%',#{address},'%'))
+                OR (#{mode} = 1 AND a.co_gu LIKE CONCAT('%',#{address},'%'))
+                OR (#{mode} = 2 AND a.co_dong LIKE CONCAT('%',#{address},'%'))
                 );
 
     </select>

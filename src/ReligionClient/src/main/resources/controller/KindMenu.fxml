@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.rss.controller.KindSearchController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="360.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rss.controller.KindSearchController">
+   <children>
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="452.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+        <columns>
+            <TableColumn fx:id="nameCol" prefWidth="75.0" text="이름" />
+          <TableColumn fx:id="descriptionCol" prefWidth="100.0" text="설명" />
+          <TableColumn fx:id="addressCol" prefWidth="150.0" text="주소" />
+            <TableColumn fx:id="numberCol" prefWidth="100.0" text="번호" />
+            <TableColumn fx:id="urlCol" prefWidth="120.0" text="URL" />
+            <TableColumn fx:id="kindCol" prefWidth="75.0" text="분류" />
+        </columns>
+      </TableView>
+      <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logout" text="로그아웃" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Text layoutX="496.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="분류 검색" textAlignment="CENTER" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Separator layoutX="469.0" layoutY="59.0" prefHeight="5.0" prefWidth="249.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+      <RadioButton fx:id="christBox" layoutX="540.0" layoutY="70.0" mnemonicParsing="false" text="기독교" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="70.0" />
+      <RadioButton fx:id="catholicBox" layoutX="540.0" layoutY="118.0" mnemonicParsing="false" text="천주교" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="70.0" />
+      <RadioButton fx:id="buddiBox" layoutX="541.0" layoutY="167.0" mnemonicParsing="false" text="불교" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="120.0">
+         <padding>
+            <Insets right="12.0" />
+         </padding>
+      </RadioButton>
+      <RadioButton fx:id="selfBox" layoutX="512.0" layoutY="172.0" mnemonicParsing="false" text="직접입력" AnchorPane.rightAnchor="138.39999999999998" AnchorPane.topAnchor="172.0" />
+      <TextField fx:id="kindField" disable="true" layoutX="595.0" layoutY="169.0" prefHeight="22.0" prefWidth="110.0" />
+      <Button fx:id="findBtn" layoutX="644.0" layoutY="215.0" mnemonicParsing="false" onAction="#find" text="검색" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="220.0" />
+   </children>
 </AnchorPane>

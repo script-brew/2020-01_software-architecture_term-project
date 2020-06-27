@@ -89,19 +89,10 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
     @Override
-    public List<FacilityModel> findFacilityByPos(AddressModel addressModel) {
+    public List<FacilityModel> findFacilityByPos(String address, int mode) {
+        List<FacilityModel> facilityModels = new ArrayList<>();
         try {
-            int to = 0;
-            if(addressModel.getCity() == null)
-                throw new Exception();
-
-            if(addressModel.getGu() == null) to = 0;
-            else if(addressModel.getDong() == null) to = 1;
-            else to = 2;
-            AddressMapping mapping = new AddressMapping(addressModel.getId(), addressModel.getCity(), addressModel.getGu(), addressModel.getDong(), addressModel.getPostalCode(), addressModel.getApartment(), addressModel.getZibun());
-
-            List<FacilityMapping> facilityMappings = facilityDao.retrieveByPos(mapping, to);
-            List<FacilityModel> facilityModels = new ArrayList<>();
+            List<FacilityMapping> facilityMappings = facilityDao.retrieveByPos(address, mode);
 
             for(FacilityMapping facilityMapping : facilityMappings) {
                 AddressMapping addressMapping = addressDao.retrieveById(facilityMapping.getAddressId());
@@ -111,14 +102,13 @@ public class FacilityServiceImpl implements FacilityService {
                 FacilityModel facilityModel = new FacilityModel(facilityMapping.getId(), facilityMapping.getName(), facilityMapping.getNumber(),
                         facilityMapping.getDescription(), facilityMapping.getUrl(), facilityMapping.getKind(), facilityMapping.getRegUserId(), model);
                 facilityModels.add(facilityModel);
-
-                return facilityModels;
+                log.info(String.format("found facility: %s", facilityModel.toString()));
             }
         } catch (Exception e) {
             log.error("error in service(findByPos)", e);
         }
 
-        return null;
+        return facilityModels;
     }
 
     @Override

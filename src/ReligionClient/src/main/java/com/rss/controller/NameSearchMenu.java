@@ -2,7 +2,6 @@ package com.rss.controller;
 
 import com.rss.entity.Address;
 import com.rss.entity.Facility;
-import com.rss.service.RegisterService;
 import com.rss.service.SearchService;
 import com.rss.service.implementation.ServiceFactoryCreator;
 import com.rss.util.SystemStatus;
@@ -10,15 +9,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -72,9 +74,16 @@ public class NameSearchMenu implements Initializable {
 
     @FXML
     void logout(ActionEvent event) {
-        Stage currentStage = (Stage) logoutBtn.getScene().getWindow();
         SystemStatus.setUser(null);
-        currentStage.close();
+        try {
+            Stage currentStage = (Stage) logoutBtn.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/controller/MainController.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
